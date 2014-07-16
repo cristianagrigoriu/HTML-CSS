@@ -41,6 +41,35 @@ img {
 	background-color: #FFFFFF;
 }
 
+navigation {
+	
+	
+}
+
+a {
+	font-size: 25px;
+	font-family: Lucida Console;
+	margin: 5px;
+}
+
+a:link {
+	COLOR: #3C4663;
+}
+a:visited {
+	COLOR: #6D748C;
+}
+a:hover {
+	COLOR: #BB7365;
+}
+a:active {
+	COLOR: #6D748C;
+}
+
+footer {
+	bottom: 0px;
+	position: fixed;
+}
+
 tr:nth-child(even) {
     background-color: #E6B88A;
 }
