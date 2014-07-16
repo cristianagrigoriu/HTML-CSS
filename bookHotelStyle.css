@@ -1,20 +1,49 @@
 header {
-	
+	color: #9CAA9C;
+	border-bottom-style: solid;
+	border-bottom-color: #AAAAAA;
+	//margin-bottom: 30px;
+}
+
+header h1 {
+	font-style: italic;
+	display: inline;
+	//margin-bottom: 30px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+nav {
+	text-align: right;
+	margin-top: -25px;
+}
+
+body {
+	background-color:white;
+	background-image: url("subtle-mosaic-pattern.png");
+	//background-repeat:repeat;
+}
+
+table tr:first-child th:first-child{
+  border-top-left-radius:7px;
+}
+
+table tr:first-child th:last-child{
+	border-top-right-radius: 7px;
+	//border-width: thin;
+	//margin-top: 1px;
 }
 
 table{
-	border-color: #AAAAAA;
-	border-style: dotted solid;
+	border-color: #9CAA9C;
+	//border-style: thin;
 	border-width: thin;
-	border-radius: 5px;
+	//border-radius: 5px;
 	margin-top: 30px;
-}
+	margin-bottom: 30px;
+	border-collapse: collapse;
+	border: 0px;
 
-.limitChar {
-	//overflow: hidden;
-	width: 100px;
-	color: ##FF0000;
-	width: 300px;
 }
 
 tr {
@@ -24,24 +53,34 @@ tr {
 }
 
 td{
-	border-color: #AAAAAA;
+	border-color: #9CAA9C;
 	border-style: solid;
 	border-width: thin;
-	border-radius: 5px;
 	white-space: wrap;
-	margin: 0 auto;
+	//width: 200px;
+	//height: 50px;
+	//border-radius: 5px;
+	
+	//margin: 0 auto;
+}
+
+tbody tr td:nth-child(3) {
+	width: 300px;
 }
 
 td:hover {
-	background-color: #DEADA1;
+	background-color: #EFEFDE;
 }
 
 th {
-	background-color: #AAAAAA;
-	border-color: #AAAAAA;
+	background-color: #BD9A52;
+	border-color: #9CAA9C;
 	border-style: solid;
+	white-space: wrap;
+	//border-color: #9CAA9C;
+	//border-style: solid;
 	border-width: thin;
-	border-radius: 5px;
+	//border-radius: 5px;
 }
 
 td.starPicture:hover {
@@ -65,21 +104,18 @@ img {
 	background-color: #FFFFFF;
 }
 
-navigation {
-	
-}
-
 a {
-	font-size: 25px;
+	font-size: 20px;
 	font-family: Lucida Console;
-	margin: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 a:link {
-	COLOR: #3C4663;
+	COLOR: #9CAA9C;
 }
 a:visited {
-	COLOR: #6D748C;
+	COLOR: #9CAA9C;
 }
 a:hover {
 	COLOR: #BB7365;
@@ -88,15 +124,22 @@ a:active {
 	COLOR: #6D748C;
 }
 
+section {
+	//border-bottom-style: solid;
+	//border-bottom-color: #AAAAAA;
+}
+
 footer {
 	bottom: 0px;
-	position: fixed;
+	border-top-style: solid;
+	border-top-color: #AAAAAA;
+	width:100%;
 }
 
 tr:nth-child(even) {
-    background-color: #BB7365;
+    background-color: #BDCFBD;
 }
 
 tr:nth-child(odd) {
-    background-color: #6D748C;
+    background-color: #9CAA9C;
 }
