@@ -30,6 +30,7 @@ table tr:first-child th:first-child{
 
 table tr:first-child th:last-child{
 	border-top-right-radius: 7px;
+	
 	//border-width: thin;
 	//margin-top: 1px;
 }
@@ -41,15 +42,18 @@ table{
 	//border-radius: 5px;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	border-collapse: collapse;
-	border: 0px;
-
+	//border-collapse: collapse;
+	//border: 0px;
+	border-top-right-radius: 7px;
+	border-top-left-radius:7px;
 }
 
 tr {
 	/*border-color: #AAAAAA;
 	border-style: dotted solid;
 	border-width: thin;*/
+	border-top-right-radius: 7px;
+	border-top-left-radius:7px;
 }
 
 td{
@@ -126,11 +130,13 @@ a:active {
 
 section {
 	//border-bottom-style: solid;
-	//border-bottom-color: #AAAAAA;
+	//border-bottom-color: #AAAAAA; 
 }
 
 footer {
 	bottom: 0px;
+	position: relative;
+	top: 410px;
 	border-top-style: solid;
 	border-top-color: #AAAAAA;
 	width:100%;
