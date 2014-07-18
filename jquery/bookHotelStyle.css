@@ -1,0 +1,151 @@
+header {
+	color: #9CAA9C;
+	border-bottom-style: solid;
+	border-bottom-color: #AAAAAA;
+	//margin-bottom: 30px;
+}
+
+header h1 {
+	font-style: italic;
+	display: inline;
+	//margin-bottom: 30px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+nav {
+	text-align: right;
+	margin-top: -25px;
+}
+
+body {
+	background-color:white;
+	background-image: url("subtle-mosaic-pattern.png");
+	//background-repeat:repeat;
+}
+
+table tr:first-child th:first-child{
+  border-top-left-radius:7px;
+}
+
+table tr:first-child th:last-child{
+	border-top-right-radius: 7px;
+	
+	//border-width: thin;
+	//margin-top: 1px;
+}
+
+table{
+	border-color: #9CAA9C;
+	//border-style: thin;
+	border-width: thin;
+	//border-radius: 5px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	//border-collapse: collapse;
+	//border: 0px;
+	border-top-right-radius: 7px;
+	border-top-left-radius:7px;
+}
+
+tr {
+	/*border-color: #AAAAAA;
+	border-style: dotted solid;
+	border-width: thin;*/
+	border-top-right-radius: 7px;
+	border-top-left-radius:7px;
+}
+
+td{
+	border-color: #9CAA9C;
+	border-style: solid;
+	border-width: thin;
+	white-space: wrap;
+	//width: 200px;
+	//height: 50px;
+	//border-radius: 5px;
+	
+	//margin: 0 auto;
+}
+
+tbody tr td:nth-child(3) {
+	width: 300px;
+}
+
+td:hover {
+	background-color: #EFEFDE;
+}
+
+th {
+	background-color: #BD9A52;
+	border-color: #9CAA9C;
+	border-style: solid;
+	white-space: wrap;
+	//border-color: #9CAA9C;
+	//border-style: solid;
+	border-width: thin;
+	//border-radius: 5px;
+}
+
+td.starPicture:hover {
+	zoom:130%;
+	position: relative;
+	margin: 10px;
+	border-color: #FFFFFF;
+	background-color: #FFFFFF;
+	/*transform:scale(1.2);
+	-webkit-transform:scale(1.2);
+	background-color: #FFFFFF;*/
+}
+
+img {
+	height: 39px;
+	width: 40px;
+	float: left;
+}
+
+.starPicture {
+	background-color: #FFFFFF;
+}
+
+a {
+	font-size: 20px;
+	font-family: Lucida Console;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+a:link {
+	COLOR: #9CAA9C;
+}
+a:visited {
+	COLOR: #9CAA9C;
+}
+a:hover {
+	COLOR: #BB7365;
+}
+a:active {
+	COLOR: #6D748C;
+}
+
+section {
+	//border-bottom-style: solid;
+	//border-bottom-color: #AAAAAA; 
+}
+
+footer {
+	bottom: 0px;
+	position: relative;
+	top: 410px;
+	border-top-style: solid;
+	border-top-color: #AAAAAA;
+	width:100%;
+}
+
+tr:nth-child(even) {
+    background-color: #BDCFBD;
+}
+
+tr:nth-child(odd) {
+    background-color: #9CAA9C;
+}
