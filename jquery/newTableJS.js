@@ -5,10 +5,11 @@ function show() {
 $(document).ready(function() {
 	appendRowsToTable();
 	addHotel();
+	deleteHotel();
 });
 
 function appendRowsToTable() {
-	var hotels = buildTable();
+	var hotels = getTableData();
 	
 	for (var i=0; i<hotels.length; i++) {
 		var currentRow = $('#hotelsTable > tbody:last');
@@ -19,46 +20,24 @@ function appendRowsToTable() {
 			contentRow += '<img src = "star.jpg"/>';
 		}
 		
-		contentRow += '</td><td><button type="button" id="edit">Edit</button>' + '<button type="button" id="delete">Delete</button></td>';
+		contentRow += '</td><td><button type="button" class="edit">Edit</button>' + '<button type="button" class="delete">Delete</button></td>';
 		
 		contentRow += '</tr>'
 		currentRow.append(contentRow);
 	}
 }
 
-function buildTable() {
-	var hotels = [{
-		name: "Hilton Hotel",
-		location: "New York, USA",
-		details: "The Millenium Hilton hotel is conveniently located right in the heart of New York City.",
-		stars: 5
-	},
-	{
-		name: "IceHotel",
-		location: "Iceland, Europe",
-		details: "Creativity is our lifeblood. Every winter for almost 25 years ICEHOTEL rises again and every time with brand new art and design.",
-		stars: 4
-	},
-	{
-		name: "Budapest Grand Hotel",
-		location: "Hungary, Europe",
-		details: "The adventures of Gustave H, a legendary concierge at a famous European hotel between the wars.",
-		stars: 3
-	},
-	{
-		name: "Holiday Inn Express",
-		location: "UK, Europe",
-		details: "Step directly from bustling Old Street into Holiday Inn Express London-City's bright and welcoming lobby.",
-		stars: 4
-	},
-	{
-		name: "New Hilton Hotel",
-		location: "Saudi Arabia, Asia",
-		details: "Overlooking the Kaabah, the Haram and the Holy City, the Makkah Hilton Hotel is set in the heart of Makkah, Saudi Arabia.",
-		stars: 5
-	}];
-	
+function getTableData() {
 	return hotels;
+}
+
+function deleteHotel() {
+	$('.delete').click(function() {
+		var isSureToDelete = confirm("Are you sure you want to delete this row?");
+		if (isSureToDelete) {
+			$(this).closest('tr').remove();
+		}
+	});
 }
 
 function addHotel() {
@@ -98,6 +77,14 @@ function saveNewHotel() {
 		contentRow += '</tr>'
 		currentRow.append(contentRow);
 		
+		var newHotel = {
+			name: $('#name').val(),
+			location: $('#cities').val(),
+			details: $('#description').val(),
+			stars: $('#stars').val()
+		};
+		
+		addNewHotelToList(newHotel);
 		DeleteFirstRow();
 	});
 }
@@ -112,3 +99,38 @@ function cancelNewHotel() {
 function DeleteFirstRow() {
 	$('#hotelsTable tbody tr:first').remove();
 }
+
+function addNewHotelToList(newHotel) {
+	hotels.push(newHotel);
+}
+
+var hotels = [{
+		name: "Hilton Hotel",
+		location: "New York, USA",
+		details: "The Millenium Hilton hotel is conveniently located right in the heart of New York City.",
+		stars: 5
+	},
+	{
+		name: "IceHotel",
+		location: "Iceland, Europe",
+		details: "Creativity is our lifeblood. Every winter for almost 25 years ICEHOTEL rises again and every time with brand new art and design.",
+		stars: 4
+	},
+	{
+		name: "Budapest Grand Hotel",
+		location: "Hungary, Europe",
+		details: "The adventures of Gustave H, a legendary concierge at a famous European hotel between the wars.",
+		stars: 3
+	},
+	{
+		name: "Holiday Inn Express",
+		location: "UK, Europe",
+		details: "Step directly from bustling Old Street into Holiday Inn Express London-City's bright and welcoming lobby.",
+		stars: 4
+	},
+	{
+		name: "New Hilton Hotel",
+		location: "Saudi Arabia, Asia",
+		details: "Overlooking the Kaabah, the Haram and the Holy City, the Makkah Hilton Hotel is set in the heart of Makkah, Saudi Arabia.",
+		stars: 5
+	}];
