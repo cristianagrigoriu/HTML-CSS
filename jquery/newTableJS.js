@@ -13,11 +13,15 @@ function appendRowsToTable() {
 	for (var i=0; i<hotels.length; i++) {
 		var currentRow = $('#hotelsTable > tbody:last');
 		var contentRow = '<tr><td>' + hotels[i].name + '</td><td class="location">' + hotels[i].location + '</td><td>' + hotels[i].details + '</td>';
+		
 		contentRow += '<td class="starPicture">';
 		for (var j=0; j<hotels[i].stars; j++) {
 			contentRow += '<img src = "star.jpg"/>';
 		}
-		contentRow += '</td></tr>'
+		
+		contentRow += '</td><td><button type="button" id="edit">Edit</button>' + '<button type="button" id="delete">Delete</button></td>';
+		
+		contentRow += '</tr>'
 		currentRow.append(contentRow);
 	}
 }
@@ -59,23 +63,52 @@ function buildTable() {
 
 function addHotel() {
 	$('#addHotel').click( function() {
-		var emptyRow = $('<tr><td><input type="text" placeholder="Name..."></td>' + '<td><select id="#cities"></select></td>' + '<td><textarea maxlength="200" placeholder="Short description (max. 200 characters)"></textarea></td>' + '<td><input type="text" placeholder="Number of stars..."></td></tr>');
-		$(".location").each(function() {
-			alert($(this).text());
-			//append elements to dropdown
-			$('#cities').append('<option>' + $(this).text() +'</option>');
+		var emptyRow = $('<tr><td><input id="name" type="text" placeholder="Name..."></td>' + '<td><select id="cities"></select></td>' + '<td><textarea id="description" maxlength="200" placeholder="Short description (max. 200 characters)"></textarea></td>' + '<td><select id="stars"></select></td>' + '<td><button type="button" id="save">Save</button>' + '<button type="button" id="cancel">Cancel</button></td></tr>');
+		
+		$(emptyRow).insertBefore('#hotelsTable > tbody > tr:first');
+				
+		var cities = ["New York", "Iceland", "Hungary", "UK", "Saudi Arabia"];
+		$.each(cities, function(value, index) {
+			$('#cities').append('<option>' + index + '</option>');
 		});
 		
-		$(emptyRow).insertBefore('#hotelsTable > tbody > tr:first');
+		var stars = [1, 2, 3, 4, 5];
+		$.each(stars, function(value, index) {
+			$('#stars').append('<option>' + index + '</option>');
+		});
 		
-		/*locations.each(function() {
-			var cityDropdown = $('#cities');
-			$.each(this.val, function(val, text) {
-				cityDropdown.append(
-				$('<option></option>').val(val).html(text)
-				);
-			});
-		$(emptyRow).insertBefore('#hotelsTable > tbody > tr:first');
-		});*/
+		saveNewHotel();
+		cancelNewHotel();
 	});
+}
+
+function saveNewHotel() {
+	$('#save').click(function ()
+	{
+		var currentRow = $('#hotelsTable > tbody:last');
+		var contentRow = '<tr><td>' + $('#name').val() + '</td><td class="location">' + $('#cities').val() + '</td><td>' + $('#description').val() + '</td>';
+		
+		contentRow += '<td class="starPicture">';
+		for (var j=0; j<$('#stars').val(); j++) {
+			contentRow += '<img src = "star.jpg"/>';
+		}
+		
+		contentRow += '</td><td><button type="button" id="edit">Edit</button>' + '<button type="button" id="delete">Delete</button></td>';
+		
+		contentRow += '</tr>'
+		currentRow.append(contentRow);
+		
+		DeleteFirstRow();
+	});
+}
+
+function cancelNewHotel() {
+	$('#cancel').click (function() 
+	{
+		DeleteFirstRow();
+	});
+}
+
+function DeleteFirstRow() {
+	$('#hotelsTable tbody tr:first').remove();
 }
